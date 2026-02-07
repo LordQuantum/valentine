@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Selection</title>
+    <link rel="stylesheet" href="css/food.css" />
+  </head>
+  <body>
+    <div id="foodquestion">
+      <b>What food would you like to eat?</b>
+    </div>
+
+    <div class="food-selection">
+      <div class="food-item">
+        <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
+        <label
+          ><input
+            type="checkbox"
+            name="food"
+            value="Burgers, fries and fried chicken"
+          />
+          burgers and fried chicken</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="food/thai.jpeg" alt="Thai food" />
+        <label
+          ><input type="checkbox" name="food" value="Thai food" /> Thai food</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="food/koreanfood.jpeg" alt="koreanfood" />
+        <label
+          ><input type="checkbox" name="food" value="Korean food" /> korean
+          food</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="food/lankan.jpg" alt="Lankan food" />
+        <label><input type="checkbox" name="food" value="Lankan food" /> Lankan food</label>
+      </div>
+      <div class="food-item">
+        <img src="food/pizza.jpeg" alt="pizza" />
+        <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
+      </div>
+      <div class="food-item">
+        <img src="food/salad.jpeg" alt="salad" />
+        <label><input type="checkbox" name="food" value="salad" /> salad</label>
+      </div>
+      <div class="food-item">
+        <img src="food/steak.jpeg" alt="steak" />
+        <label><input type="checkbox" name="food" value="steak" /> steak</label>
+      </div>
+      <div class="food-item">
+        <img src="food/mexican.jpeg" alt="Mexican" />
+        <label><input type="checkbox" name="food" value="Mexican" /> Mexican</label>
+      </div>
+    </div>
+    <button class="button" id="foodContinue">
+      Continue
+    </button>
+    <script>
+      document.getElementById('foodContinue').onclick = function() {
+        var checked = document.querySelectorAll('input[name="food"]:checked');
+        var values = Array.from(checked).map(function(c) { return c.value; });
+        localStorage.setItem('valentine_food', values.join(', '));
+        location.href = 'dessert.html';
+      };
+    </script>
+  </body>
+</html>

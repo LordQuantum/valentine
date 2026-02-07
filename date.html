@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+    <link rel="stylesheet" href="css/date.css" />
+  </head>
+  <body>
+    <h1 title="choose a date">Are you free on ...</h1>
+    <form class="form-group" id="dateForm">
+      <label>Which day: (select a date)</label>
+      <div>
+        <input type="date" id="dateInput" required />
+        <button class="button" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+    <script>
+      document.getElementById('dateForm').onsubmit = function(e) {
+        e.preventDefault();
+        var date = document.getElementById('dateInput').value;
+        if (date) {
+          localStorage.setItem('valentine_date', date);
+          location.href = 'food.html';
+        }
+      };
+    </script>
+  </body>
+</html>
